@@ -176,5 +176,6 @@ html {
 
   .PhotosCardContainer-PhotosBox > picture::after {
     font-size: 2rem;
+    width: 11rem;
   }
 }
