@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap");
+
+:root {
+  --color-brand-1: hsl(0, 0%, 100%);
+  --color-brand-2: hsl(0, 0%, 55%);
+  --color-brand-3: hsl(0, 0%, 41%);
+
+  --color-site-1: hsl(0, 0%, 0%);
+
+  --font-alata: "Alata", sans-serif;
+  --font-josefin: "Josefin Sans", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.PhotosCardContainer {
+  text-align: center;
+}
+
+.PhotosCardContainer-Title {
+  font-size: 3.5rem;
+  color: var(--color-brand-3);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  line-height: 4.5rem;
+  font-family: var(--font-josefin);
+  font-weight: 300;
+}
+
+.PhotosCardContainer-PhotosBox {
+  width: 100%;
+}
+
+.PhotosCardContainer-PhotosBox > picture {
+  position: relative;
+}
+
+.PhotosCardContainer-PhotosBox > picture::after {
+  content: "deep earth";
+  position: absolute;
+  bottom: 3rem;
+  left: 2rem;
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+  font-family: var(--font-josefin);
+  text-transform: uppercase;
+  color: var(--color-brand-1);
+  text-align: left;
+  width: 9rem;
+}
+
+.PhotosCardContainer-PhotosBox > picture:nth-of-type(2):after {
+  content: "night arcade";
+}
+
+.PhotosCardContainer-PhotosBox > picture:nth-of-type(3):after {
+  content: "soccer team vr";
+}
+
+.PhotosCardContainer-PhotosBox > picture:nth-of-type(4):after {
+  content: "the grid";
+}
+
+.PhotosCardContainer-PhotosBox > picture:nth-of-type(5):after {
+  content: "from up above vr";
+}
+
+.PhotosCardContainer-PhotosBox > picture:nth-of-type(6):after {
+  content: "pocket borealis";
+}
+.PhotosCardContainer-PhotosBox > picture:nth-of-type(7):after {
+  content: "the curiosity";
+}
+.PhotosCardContainer-PhotosBox > picture:nth-of-type(8):after {
+  content: "make it fisheye";
+}
+
+.PhotosCardContainer-PhotosBox > picture > img {
+  width: 100%;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.PhotosCardContainer-PhotosBox > picture:hover::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: var(--color-brand-2);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.PhotosCardContainer-PhotosBox > picture:hover::after {
+  color: var(--color-site-1);
+}
+
+.PhotosCardContainer-Btn {
+  background-color: transparent;
+  border: 1px solid var(--color-site-1);
+  outline: none;
+  cursor: pointer;
+  padding: 1rem 3rem;
+  letter-spacing: 2px;
+  font-size: 1.6rem;
+  color: var(--color-site-1);
+  font-family: var(--font-alata);
+  text-transform: uppercase;
+  margin: 1rem auto;
+  transition: all 0.2s ease-in-out;
+}
+
+.PhotosCardContainer-Btn:hover {
+  background-color: var(--color-site-1);
+  color: var(--color-brand-1);
+}
+
+@media screen and (min-width: 500px) {
+  .PhotosCardContainer-PhotosBox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .PhotosCardContainer-PhotosBox > picture > img {
+    margin-bottom: 0;
+  }
+
+  .PhotosCardContainer-Btn {
+    margin: 4rem auto 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .PhotosCardContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 15rem 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .PhotosCardContainer-Title {
+    grid-area: 1/1/1/1;
+    margin-bottom: 0;
+    margin-right: auto;
+    font-size: 4.5rem;
+  }
+
+  .PhotosCardContainer-Btn {
+    grid-area: 1/2/2/2;
+    width: 20rem;
+    margin: 0;
+    margin-left: auto;
+  }
+
+  .PhotosCardContainer-PhotosBox {
+    grid-area: 2/1/2/3;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .PhotosCardContainer-PhotosBox > picture::after {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap");
+
+:root {
+  --color-brand-1: hsl(0, 0%, 100%);
+  --color-brand-2: hsl(0, 0%, 55%);
+  --color-brand-3: hsl(0, 0%, 41%);
+
+  --color-site-1: hsl(0, 0%, 0%);
+
+  --font-alata: "Alata", sans-serif;
+  --font-josefin: "Josefin Sans", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+ul {
+  list-style: none;
+}
+
+footer {
+  background-color: var(--color-site-1);
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.FooterLogo {
+  display: inline-block;
+  width: 16rem;
+  margin-bottom: 4rem;
+}
+
+.FooterLogo > img {
+  width: 100%;
+}
+
+.FooterLinks {
+  margin-bottom: 3rem;
+}
+
+.FooterLinks-Link {
+  margin: 0 auto 1.5rem;
+  width: fit-content;
+}
+
+.FooterLinks-Link > a {
+  font-size: 1.6rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-family: var(--font-alata);
+  color: var(--color-brand-1);
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.FooterLinks-Link:hover > a::after {
+  position: absolute;
+  content: "";
+  display: block;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3rem;
+  height: 0.2rem;
+  background-color: var(--color-brand-1);
+}
+
+.SocialIconsBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem auto;
+}
+
+.socialIcon {
+  color: var(--color-brand-1);
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.SocialIconsBox > li {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.SocialIconsBox > li:hover::after {
+  position: absolute;
+  content: "";
+  display: block;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2rem;
+  height: 0.2rem;
+  background-color: var(--color-brand-1);
+}
+
+.CopyRight {
+  font-size: 1.6rem;
+  color: var(--color-brand-2);
+  font-family: var(--font-alata);
+}
+
+@media screen and (min-width: 768px) {
+  footer {
+    padding: 5rem 8%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .FooterLogo {
+    width: 20rem;
+    grid-area: 1/1/1/1;
+  }
+
+  .CopyRight {
+    grid-area: 2/2/2/2;
+    text-align: right;
+  }
+
+  .FooterLinks {
+    grid-area: 2/1/2/2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3rem;
+    margin-bottom: 0;
+    margin-right: auto;
+  }
+
+  .SocialIconsBox {
+    grid-area: 1/2/2/2;
+    margin: 0;
+    margin-left: auto;
+  }
+}
